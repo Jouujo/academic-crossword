@@ -97,7 +97,6 @@ export function generateAcrossOnlyPuzzle(params: {
 
 function cryptoRandomId(): string {
     if (typeof crypto !== "undefined" && "randomUUID" in crypto) {
-        // @ts-expect-error node/edge/browser runtime provides randomUUID
         return crypto.randomUUID();
     }
     return `puz_${Math.random().toString(36).slice(2, 10)}`;
